@@ -1,0 +1,19 @@
+Index: python3.8/site-packages/scapy/contrib/scada/iec104/iec104_fields.py
+===================================================================
+--- python3.8/site-packages/scapy/contrib/scada/iec104/iec104_fields.py	(date 1595266888000)
++++ python3.8/site-packages/scapy/contrib/scada/iec104/iec104_fields.py	(date 1595266888000)
+@@ -98,11 +98,11 @@
+     """
+ 
+     def __init__(self, name, default):
+-        Field.__init__(self, name, default, "!I")
++        Field.__init__(self, name, default, "<H")
+ 
+     def addfield(self, pkt, s, val):
+         b0 = (val << 1) & 0xfe
+-        b1 = val >> 7
++        b1 = (val >> 7) & 0xff
+ 
+         return s + bytes(bytearray([b0, b1]))
+ 
+

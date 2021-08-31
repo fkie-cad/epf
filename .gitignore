@@ -103,7 +103,8 @@ venv.bak/
 # mypy
 .mypy_cache/
 
-fuzzowski_results/
+EPF_results/
 .idea
 
 
+eval
